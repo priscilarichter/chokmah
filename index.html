@@ -16,6 +16,36 @@
   img { max-width: 100%; }
   [hidden] { display: none !important; }
 </style>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BR6BK8BY6Y"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-BR6BK8BY6Y');
+</script>
+<script>
+  document.addEventListener('click', function (e) {
+    var alvo = e.target;
+    if (!alvo || typeof alvo.closest !== 'function') return;
+    var a = alvo.closest('a');
+    if (!a || !a.href) return;
+    var href = a.href.toLowerCase();
+    var evento = null;
+    if (href.indexOf('wa.me') > -1 || href.indexOf('whatsapp') > -1) evento = 'contato_whatsapp';
+    else if (href.indexOf('tel:') === 0) evento = 'contato_telefone';
+    else if (href.indexOf('mailto:') === 0) evento = 'contato_email';
+    else if (href.indexOf('instagram.com') > -1) evento = 'clique_instagram';
+    else if (href.indexOf('linkedin.com') > -1) evento = 'clique_linkedin';
+    else if (href.indexOf('doctoralia') > -1) evento = 'clique_doctoralia';
+    if (evento) {
+      gtag('event', evento, {
+        link_url: a.href,
+        link_texto: (a.innerText || '').trim().slice(0, 100)
+      });
+    }
+  }, true);
+</script>
 </head>
 <body>
 <title>Chokmah Saúde Mental</title>
