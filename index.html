@@ -46,6 +46,31 @@
     }
   }, true);
 </script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var p = new URLSearchParams(location.search);
+    var origem = (p.get('utm_source') || '').toLowerCase();
+    var frase;
+    if (origem.indexOf('google') > -1 || origem.indexOf('ads') > -1 || origem.indexOf('cpc') > -1) {
+      frase = 'Olá! Vim pelo anúncio no Google e gostaria de informações sobre os atendimentos.';
+    } else if (origem.indexOf('instagram') > -1 || origem === 'ig') {
+      frase = 'Olá! Vim pelo Instagram e gostaria de informações sobre os atendimentos.';
+    } else if (origem.indexOf('linkedin') > -1) {
+      frase = 'Olá! Vim pelo LinkedIn e gostaria de informações sobre os atendimentos.';
+    } else {
+      frase = 'Olá! Vim pelo site e gostaria de informações sobre os atendimentos.';
+    }
+    document.querySelectorAll('a[href*="wa.me"], a[href*="api.whatsapp.com"]').forEach(function (a) {
+      try {
+        var u = new URL(a.href);
+        if (!u.searchParams.get('text')) {
+          u.searchParams.set('text', frase);
+          a.href = u.toString();
+        }
+      } catch (e) {}
+    });
+  });
+</script>
 </head>
 <body>
 <title>Chokmah Saúde Mental</title>
