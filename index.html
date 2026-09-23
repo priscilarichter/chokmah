@@ -16,6 +16,99 @@
   img { max-width: 100%; }
   [hidden] { display: none !important; }
 </style>
+<!-- Consentimento de cookies, Chokmah -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  (function () {
+    var CHAVE = 'chokmah_consentimento';
+    var salvo = null;
+    try { salvo = localStorage.getItem(CHAVE); } catch (e) {}
+
+    gtag('consent', 'default', {
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      analytics_storage: (salvo === 'aceito') ? 'granted' : 'denied',
+      wait_for_update: 500
+    });
+
+    function guardar(valor) {
+      try { localStorage.setItem(CHAVE, valor); } catch (e) {}
+      gtag('consent', 'update', {
+        analytics_storage: (valor === 'aceito') ? 'granted' : 'denied'
+      });
+    }
+
+    function montarBanner() {
+      var existente = document.getElementById('chokmah-cookies');
+      if (existente) { existente.style.display = 'block'; return; }
+
+      var css = document.createElement('style');
+      css.textContent = [
+        '#chokmah-cookies{position:fixed;left:0;right:0;bottom:0;z-index:9999;',
+        'background:var(--surface,#1d1829);color:var(--ink,#ece9f4);',
+        'border-top:1px solid var(--line,#322b45);',
+        'font-family:var(--display,"Montserrat",system-ui,sans-serif);',
+        'box-shadow:0 -8px 24px -18px rgba(0,0,0,.9);}',
+        '#chokmah-cookies .cc-in{max-width:56rem;margin:0 auto;padding:1rem 1.25rem;',
+        'display:flex;flex-wrap:wrap;gap:.9rem 1.25rem;align-items:center;justify-content:space-between;}',
+        '#chokmah-cookies p{margin:0;font-size:.86rem;line-height:1.55;max-width:44rem;}',
+        '#chokmah-cookies a{color:var(--brand,#b9a4dd);}',
+        '#chokmah-cookies .cc-bt{display:flex;gap:.6rem;flex-wrap:wrap;}',
+        '#chokmah-cookies button{font-family:inherit;font-size:.82rem;font-weight:600;',
+        'padding:.55rem 1.15rem;min-width:8.5rem;border-radius:6px;cursor:pointer;',
+        'background:var(--brand-wash,#241d3a);color:var(--ink,#ece9f4);',
+        'border:1px solid var(--brand-mid,#9e85be);}',
+        '#chokmah-cookies button:hover{border-color:var(--focus,#c2bedf);}',
+        '@media (max-width:600px){#chokmah-cookies .cc-bt{width:100%;}',
+        '#chokmah-cookies button{flex:1;min-width:0;}}'
+      ].join('');
+      document.head.appendChild(css);
+
+      var cx = document.createElement('div');
+      cx.id = 'chokmah-cookies';
+      cx.setAttribute('role', 'dialog');
+      cx.setAttribute('aria-label', 'Aviso sobre cookies');
+      cx.innerHTML = '<div class="cc-in"><p>Este site usa cookies do Google Analytics apenas para entender como as pessoas chegam até aqui e quais conteúdos são lidos. Enquanto você não decidir, nada é gravado no seu navegador. Detalhes na <a href="/privacidade.html">política de privacidade</a>.</p><div class="cc-bt"><button type="button" data-cc="aceito">Aceitar</button><button type="button" data-cc="recusado">Recusar</button></div></div>';
+      document.body.appendChild(cx);
+
+      var botoes = cx.querySelectorAll('button');
+      for (var i = 0; i < botoes.length; i++) {
+        botoes[i].addEventListener('click', function () {
+          guardar(this.getAttribute('data-cc'));
+          cx.style.display = 'none';
+        });
+      }
+    }
+
+    window.abrirPreferenciasCookies = montarBanner;
+
+    document.addEventListener('DOMContentLoaded', function () {
+      if (salvo !== 'aceito' && salvo !== 'recusado') { montarBanner(); }
+
+      if (document.getElementById('cc-link')) { return; }
+      var link = document.createElement('a');
+      link.id = 'cc-link';
+      link.href = '#';
+      link.textContent = 'Preferências de cookies';
+      link.addEventListener('click', function (ev) { ev.preventDefault(); montarBanner(); });
+
+      var alvo = document.querySelector('footer a[href*="privacidade"]');
+      var rodape = document.querySelector('footer');
+      if (alvo && alvo.parentNode) {
+        var sep = document.createTextNode(' · ');
+        alvo.parentNode.insertBefore(sep, alvo.nextSibling);
+        alvo.parentNode.insertBefore(link, sep.nextSibling);
+      } else if (rodape) {
+        var linha = document.createElement('div');
+        linha.style.marginTop = '.6rem';
+        linha.appendChild(link);
+        (rodape.firstElementChild || rodape).appendChild(linha);
+      }
+    });
+  })();
+</script>
   <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-BR6BK8BY6Y"></script>
 <script>
