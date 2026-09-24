@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Avaliação de Altas Habilidades e Superdotação em Adultos | Chokmah Saúde Mental</title>
+<meta name="description" content="Avaliação neuropsicológica de altas habilidades/superdotação em adultos, em formato híbrido, com a aplicação de testes presencial na Vila Mariana, São Paulo. Priscila de Freitas Richter Rodrigues, CRP 06/74.219.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.chokmahsaudemental.com.br/altas-habilidades-adultos.html">
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="Altas habilidades/superdotação em adultos">
+<meta property="og:description" content="Muita gente só suspeita de altas habilidades/superdotação depois dos trinta, dos quarenta ou dos cinquenta. A avaliação neuropsicológica serve para responder isso com método, e não com teste de internet.">
+<meta property="og:url" content="https://www.chokmahsaudemental.com.br/altas-habilidades-adultos.html">
+<meta property="og:locale" content="pt_BR">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
+
+<!-- Consentimento de cookies, Chokmah -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  (function () {
+    var CHAVE = 'chokmah_consentimento';
+    var salvo = null;
+    try { salvo = localStorage.getItem(CHAVE); } catch (e) {}
+
+    gtag('consent', 'default', {
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      analytics_storage: (salvo === 'aceito') ? 'granted' : 'denied',
+      wait_for_update: 500
+    });
+
+    function guardar(valor) {
+      try { localStorage.setItem(CHAVE, valor); } catch (e) {}
+      gtag('consent', 'update', {
+        analytics_storage: (valor === 'aceito') ? 'granted' : 'denied'
+      });
+    }
+
+    function montarBanner() {
+      var existente = document.getElementById('chokmah-cookies');
+      if (existente) { existente.style.display = 'block'; return; }
+
+      var css = document.createElement('style');
+      css.textContent = [
+        '#chokmah-cookies{position:fixed;left:0;right:0;bottom:0;z-index:9999;',
+        'background:var(--surface,#1d1829);color:var(--ink,#ece9f4);',
+        'border-top:1px solid var(--line,#322b45);',
+        'font-family:var(--display,"Montserrat",system-ui,sans-serif);',
+        'box-shadow:0 -8px 24px -18px rgba(0,0,0,.9);}',
+        '#chokmah-cookies .cc-in{max-width:56rem;margin:0 auto;padding:1rem 1.25rem;',
+        'display:flex;flex-wrap:wrap;gap:.9rem 1.25rem;align-items:center;justify-content:space-between;}',
+        '#chokmah-cookies p{margin:0;font-size:.86rem;line-height:1.55;max-width:44rem;}',
+        '#chokmah-cookies a{color:var(--brand,#b9a4dd);}',
+        '#chokmah-cookies .cc-bt{display:flex;gap:.6rem;flex-wrap:wrap;}',
+        '#chokmah-cookies button{font-family:inherit;font-size:.82rem;font-weight:600;',
+        'padding:.55rem 1.15rem;min-width:8.5rem;border-radius:6px;cursor:pointer;',
+        'background:var(--brand-wash,#241d3a);color:var(--ink,#ece9f4);',
+        'border:1px solid var(--brand-mid,#9e85be);}',
+        '#chokmah-cookies button:hover{border-color:var(--focus,#c2bedf);}',
+        '@media (max-width:600px){#chokmah-cookies .cc-bt{width:100%;}',
+        '#chokmah-cookies button{flex:1;min-width:0;}}'
+      ].join('');
+      document.head.appendChild(css);
+
+      var cx = document.createElement('div');
+      cx.id = 'chokmah-cookies';
+      cx.setAttribute('role', 'dialog');
+      cx.setAttribute('aria-label', 'Aviso sobre cookies');
+      cx.innerHTML = '<div class="cc-in"><p>Este site usa cookies do Google Analytics apenas para entender como as pessoas chegam até aqui e quais conteúdos são lidos. Enquanto você não decidir, nada é gravado no seu navegador. Detalhes na <a href="/privacidade.html">política de privacidade</a>.</p><div class="cc-bt"><button type="button" data-cc="aceito">Aceitar</button><button type="button" data-cc="recusado">Recusar</button></div></div>';
+      document.body.appendChild(cx);
+
+      var botoes = cx.querySelectorAll('button');
+      for (var i = 0; i < botoes.length; i++) {
+        botoes[i].addEventListener('click', function () {
+          guardar(this.getAttribute('data-cc'));
+          cx.style.display = 'none';
+        });
+      }
+    }
+
+    window.abrirPreferenciasCookies = montarBanner;
+
+    document.addEventListener('DOMContentLoaded', function () {
+      if (salvo !== 'aceito' && salvo !== 'recusado') { montarBanner(); }
+
+      if (document.getElementById('cc-link')) { return; }
+      var link = document.createElement('a');
+      link.id = 'cc-link';
+      link.href = '#';
+      link.textContent = 'Preferências de cookies';
+      link.addEventListener('click', function (ev) { ev.preventDefault(); montarBanner(); });
+
+      var alvo = document.querySelector('footer a[href*="privacidade"]');
+      var rodape = document.querySelector('footer');
+      if (alvo && alvo.parentNode) {
+        var sep = document.createTextNode(' · ');
+        alvo.parentNode.insertBefore(sep, alvo.nextSibling);
+        alvo.parentNode.insertBefore(link, sep.nextSibling);
+      } else if (rodape) {
+        var linha = document.createElement('div');
+        linha.style.marginTop = '.6rem';
+        linha.appendChild(link);
+        (rodape.firstElementChild || rodape).appendChild(linha);
+      }
+    });
+  })();
+</script>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BR6BK8BY6Y"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-BR6BK8BY6Y');
+</script>
+
+<script>
+  document.addEventListener('click', function (e) {
+    var alvo = e.target;
+    if (!alvo || typeof alvo.closest !== 'function') return;
+    var a = alvo.closest('a');
+    if (!a || !a.href) return;
+    var href = a.href.toLowerCase();
+    var evento = null;
+    if (href.indexOf('wa.me') > -1 || href.indexOf('whatsapp') > -1) evento = 'contato_whatsapp';
+    else if (href.indexOf('tel:') === 0) evento = 'contato_telefone';
+    else if (href.indexOf('mailto:') === 0) evento = 'contato_email';
+    else if (href.indexOf('instagram.com') > -1) evento = 'clique_instagram';
+    else if (href.indexOf('linkedin.com') > -1) evento = 'clique_linkedin';
+    else if (href.indexOf('doctoralia') > -1) evento = 'clique_doctoralia';
+    if (evento) {
+      gtag('event', evento, {
+        link_url: a.href,
+        link_texto: (a.innerText || '').trim().slice(0, 100)
+      });
+    }
+  }, true);
+
+  document.addEventListener('DOMContentLoaded', function () {
+    var p = new URLSearchParams(location.search);
+    var origem = (p.get('utm_source') || '').toLowerCase();
+    var frase;
+    if (origem.indexOf('google') > -1 || origem.indexOf('ads') > -1 || origem.indexOf('cpc') > -1) {
+      frase = 'Olá! Vim pelo anúncio no Google e gostaria de informações sobre a avaliação de altas habilidades.';
+    } else if (origem.indexOf('instagram') > -1 || origem === 'ig') {
+      frase = 'Olá! Vim pelo Instagram e gostaria de informações sobre a avaliação de altas habilidades.';
+    } else if (origem.indexOf('linkedin') > -1) {
+      frase = 'Olá! Vim pelo LinkedIn e gostaria de informações sobre a avaliação de altas habilidades.';
+    } else {
+      frase = 'Olá! Vim pela página de altas habilidades e gostaria de informações sobre a avaliação.';
+    }
+    document.querySelectorAll('a[href*="wa.me"], a[href*="api.whatsapp.com"]').forEach(function (a) {
+      try {
+        var u = new URL(a.href);
+        if (!u.searchParams.get('text')) {
+          u.searchParams.set('text', frase);
+          a.href = u.toString();
+        }
+      } catch (e) {}
+    });
+  });
+</script>
+
+<style>
+  :root{
+    --brand:#b9a4dd;
+    --brand-mid:#9e85be;
+    --brand-pale:#6e5ca5;
+    --brand-wash:#241d3a;
+    --ground:#15111e;
+    --surface:#1d1829;
+    --ink:#ece9f4;
+    --ink-soft:#a9a2bd;
+    --line:#322b45;
+    --focus:#c2bedf;
+    --shadow:0 1px 2px rgba(0,0,0,.4), 0 12px 28px -20px rgba(0,0,0,.9);
+    --display:"Montserrat","Segoe UI",Helvetica,Arial,sans-serif;
+    --body:"Source Serif 4",Georgia,"Times New Roman",serif;
+    --measure:36rem;
+  }
+  html{color-scheme:dark;-webkit-text-size-adjust:100%;}
+  *{box-sizing:border-box;}
+  body{
+    margin:0;background:var(--ground);color:var(--ink);
+    font-family:var(--body);font-size:17px;line-height:1.68;
+  }
+  a{color:var(--brand);}
+  a:hover{color:var(--focus);}
+  :focus-visible{outline:2px solid var(--focus);outline-offset:3px;border-radius:3px;}
+
+  .topo{border-bottom:1px solid var(--line);background:var(--surface);}
+  .faixa{max-width:54rem;margin:0 auto;padding:1.1rem 1.25rem;display:flex;flex-wrap:wrap;
+    gap:.75rem 1.25rem;align-items:baseline;justify-content:space-between;}
+  .marca{font-family:var(--display);font-weight:700;font-size:1.05rem;color:var(--ink);text-decoration:none;}
+  .voltar{font-family:var(--display);font-size:.85rem;font-weight:500;text-decoration:none;}
+
+  main{max-width:54rem;margin:0 auto;padding:2.6rem 1.25rem 3.5rem;}
+  .kicker{font-family:var(--display);font-size:.74rem;font-weight:600;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--brand-mid);margin:0 0 .9rem;}
+  h1{font-family:var(--display);font-weight:700;font-size:clamp(1.8rem,5vw,2.55rem);
+    line-height:1.16;margin:0 0 1.2rem;max-width:32rem;}
+  .byline{font-family:var(--display);font-size:.88rem;font-weight:500;color:var(--ink-soft);
+    margin:-.4rem 0 1.5rem;max-width:var(--measure);}
+  .byline span{color:var(--brand-mid);padding:0 .15rem;}
+  .abertura{font-size:1.08rem;max-width:var(--measure);}
+  h2{font-family:var(--display);font-weight:600;font-size:clamp(1.15rem,2.6vw,1.35rem);
+    line-height:1.3;margin:2.8rem 0 .7rem;color:var(--brand);max-width:30rem;}
+  h3{font-family:var(--display);font-weight:600;font-size:1rem;margin:1.8rem 0 .4rem;}
+  p{margin:0 0 1.05rem;max-width:var(--measure);}
+  ul{margin:0 0 1.05rem;padding-left:1.15rem;max-width:var(--measure);}
+  li{margin:0 0 .55rem;}
+  strong{font-weight:600;}
+  .fina{color:var(--ink-soft);font-size:.92rem;}
+
+  .caixa{background:var(--brand-wash);border:1px solid var(--line);
+    border-left:3px solid var(--brand-pale);border-radius:6px;
+    padding:1.15rem 1.3rem;margin:1.7rem 0;box-shadow:var(--shadow);max-width:var(--measure);}
+  .caixa p:last-child{margin-bottom:0;}
+
+  .etapas{list-style:none;padding:0;counter-reset:et;max-width:var(--measure);}
+  .etapas li{counter-increment:et;position:relative;padding-left:2.6rem;margin-bottom:1.1rem;}
+  .etapas li::before{content:counter(et);position:absolute;left:0;top:.1rem;
+    width:1.8rem;height:1.8rem;border-radius:50%;display:grid;place-items:center;
+    font-family:var(--display);font-size:.8rem;font-weight:700;
+    background:var(--brand-wash);border:1px solid var(--brand-mid);color:var(--brand);}
+  .etapas strong{display:block;font-family:var(--display);font-size:.95rem;margin-bottom:.15rem;}
+
+  .cta{background:var(--surface);border:1px solid var(--line);border-radius:8px;
+    padding:1.6rem 1.5rem;margin:2.8rem 0 1rem;box-shadow:var(--shadow);}
+  .cta h2{margin-top:0;color:var(--ink);}
+  .bt{display:inline-block;font-family:var(--display);font-weight:600;font-size:.92rem;
+    text-decoration:none;padding:.72rem 1.5rem;border-radius:6px;
+    background:var(--brand-pale);color:#fff;border:1px solid var(--brand-mid);}
+  .bt:hover{background:var(--brand-mid);color:#fff;}
+
+  .refs{margin-top:3rem;padding-top:1.6rem;border-top:1px solid var(--line);}
+  .refs h2{font-size:1rem;color:var(--ink-soft);margin-top:0;}
+  .refs ol{padding-left:1.2rem;max-width:40rem;}
+  .refs li{font-size:.86rem;line-height:1.6;color:var(--ink-soft);margin-bottom:.7rem;}
+
+  footer{border-top:1px solid var(--line);background:var(--surface);margin-top:3rem;}
+  .rodape{max-width:54rem;margin:0 auto;padding:2rem 1.25rem 2.5rem;
+    font-family:var(--display);font-size:.85rem;color:var(--ink-soft);line-height:1.75;}
+  .rodape strong{color:var(--ink);font-weight:600;}
+</style>
+</head>
+<body>
+
+<header class="topo">
+  <div class="faixa">
+    <a class="marca" href="/">Chokmah Saúde Mental</a>
+    <a class="voltar" href="/">Voltar ao site</a>
+  </div>
+</header>
+
+<main>
+  <p class="kicker">Avaliação neuropsicológica</p>
+  <h1>Altas habilidades/superdotação em adultos</h1>
+
+  <p class="byline">Priscila de Freitas Richter Rodrigues <span>·</span> Psicóloga, neurodivergente (TEA + AH/SD), CRP 06/74.219</p>
+
+  <p class="abertura">Existe uma experiência que aparece algumas vezes no consultório e quase nunca aparece nos livros: a do adulto que passou décadas sentindo que funcionava fora de compasso com o mundo ao redor. Foi chamado de intenso, disperso, exagerado, esquisito. Achava tudo lento, entediava-se com facilidade, abandonava o que dominava rápido demais, e ao mesmo tempo travava diante de coisas que pareciam simples para os outros. Aos trinta, aos quarenta, às vezes aos cinquenta, alguém comenta o termo altas habilidades/superdotação em voz alta e aquilo faz um sentido incômodo.</p>
+
+  <p>Se você chegou até aqui, provavelmente é essa a pergunta que está te trazendo. Esta página existe para responder o que é de fato a avaliação neuropsicológica de altas habilidades/superdotação em adultos, o que ela pode e o que ela não pode dizer, e por que um teste de internet não resolve isso.</p>
+
+  <h2>O que são altas habilidades, e o que elas não são</h2>
+
+  <p>A definição oficial usada no Brasil é mais larga do que a ideia popular. Segundo a Política Nacional de Educação Especial na Perspectiva da Educação Inclusiva, do Ministério da Educação, pessoas com altas habilidades/superdotação demonstram potencial elevado em qualquer uma de cinco áreas, isoladas ou combinadas: intelectual, acadêmica, liderança, psicomotricidade e artes, apresentando também elevada criatividade, grande envolvimento na aprendizagem e realização de tarefas nas áreas de seu interesse.<sup>1</sup></p>
+
+  <p>Repare no que isso implica. Superdotação não é sinônimo de quociente de inteligência alto (QI), e muito menos de boas notas. Existe potencial elevado que se expressa em música, em artes visuais, em movimento, em capacidade de conduzir pessoas, em criar soluções onde ninguém via problema. Uma parte considerável dos adultos que procuram avaliação teve justamente uma trajetória escolar comum, ou até ruim, e é por isso que ninguém desconfiou de nada na época.</p>
+
+  <div class="caixa">
+    <p>Também vale dizer o contrário com franqueza: ser inteligente, ler muito, ter memória boa ou se entediar com facilidade não constitui, por si só, altas habilidades. Existe um critério técnico, existe um procedimento, e existe a possibilidade real de a avaliação concluir que não se trata disso. Uma avaliação honesta é aquela que pode dizer não.</p>
+  </div>
+
+  <h2>Por que tanta gente descobre só na vida adulta</h2>
+
+  <p>A razão mais simples é estrutural: no Brasil, a identificação de altas habilidades foi pensada dentro da escola, para crianças em idade escolar. Quem passou pela escola antes desse tema entrar na pauta ou passou por uma escola que não olhava para isso, simplesmente não foi olhado. Não existe rede que procure adultos.</p>
+
+  <p>Uma tese de doutorado defendida na UNESP em 2025 acompanhou trinta e seis brasileiros adultos que receberam identificação tardia de altas habilidades/superdotação e descreveu algo que se ouve muito em consultório: a identificação permitiu que essas pessoas compreendessem situações da própria vida anterior, dando sentido retroativo a episódios que até então eram só desconforto, e ao mesmo tempo esbarrou em dificuldade de aceitação da própria condição por causa de estigmas sociais.<sup>2</sup> As duas coisas convivem, o alívio de entender e o embaraço de ter que se nomear assim.</p>
+
+  <p>Existe ainda um caminho comum de descoberta indireta: o adulto leva o filho para avaliar, reconhece em si o que está sendo descrito, e procura avaliação depois. Um relato de caso publicado em 2021 documenta exatamente isso, um servidor público de cinquenta e um anos que buscou avaliação após o filho ter passado pelo processo, e que recebeu identificação de dupla excepcionalidade, altas habilidades junto com transtorno de déficit de atenção e hiperatividade, sem que nenhum dos dois tivesse sido reconhecido antes, apesar de indicadores presentes desde a infância.<sup>3</sup></p>
+
+  <h3>A questão da dupla excepcionalidade</h3>
+
+  <p>Esse é o ponto que mais frequentemente explica a confusão de uma vida inteira. Altas habilidades/superdotação podem coexistir com TDAH, com transtorno do espectro autista, com transtornos de aprendizagem, com quadros de ansiedade. Quando coexistem, cada uma esconde a outra: o potencial elevado compensa a dificuldade e ela passa despercebida, enquanto a dificuldade derruba o desempenho e o potencial passa despercebido também. O resultado é uma pessoa que não se encaixa em nenhuma das duas descrições, que ouviu a vida inteira que era inteligente, mas não se esforçava, e que acumulou uma sensação de insuficiência difícil de justificar diante dos próprios resultados.</p>
+
+  <p>Na avaliação, isso aparece com clareza, porque não se olha apenas um número global, e sim o desenho completo do funcionamento, que demonstra onde ele é excepcional e onde ele falha.</p>
+
+  <h2>O que um teste de internet não responde</h2>
+
+  <p>Testes de QI que circulam na internet são entretenimento. Eles não têm padronização para a população brasileira, não têm controle das condições de aplicação, não distinguem o que é habilidade de raciocínio do que é familiaridade com aquele tipo de exercício, e não produzem documento algum. Um resultado alto ali não sustenta nada, e um resultado baixo não afasta nada.</p>
+
+  <p>Avaliação neuropsicológica é outro tipo de procedimento. Ela usa instrumentos padronizados e aprovados para uso profissional no país, aplicados individualmente por psicólogo, interpretados em comparação com normas da população adequada à sua idade, e integrados com sua história de vida, escolaridade, queixas e contexto. O produto é um laudo assinado, com identificação profissional, que tem validade para uso clínico e, quando necessário, institucional.</p>
+
+  <h2>Como funciona aqui</h2>
+
+  <p>O processo é híbrido, com a parte presencial no consultório na Vila Mariana, em São Paulo. Essa não é uma preferência de estilo: avaliar altas habilidades exige uma parte de aplicação de testes de maneira presencial.</p>
+
+  <ol class="etapas">
+    <li><strong>Entrevista inicial</strong>Uma sessão dedicada à sua história, às suas queixas atuais e ao que você espera da avaliação.</li>
+    <li><strong>Sessões de aplicação</strong>Encontros com os instrumentos selecionados para o seu caso. A quantidade varia conforme o que precisa ser investigado.</li>
+    <li><strong>Correção e integração</strong>Etapa de trabalho sem a sua presença, em que os resultados são apurados, comparados com as normas e articulados com o que foi levantado na entrevista.</li>
+    <li><strong>Devolutiva</strong>Uma sessão para conversar sobre as conclusões, em linguagem compreensível, com espaço para as suas perguntas. Não é a entrega de um envelope.</li>
+    <li><strong>Laudo</strong>Documento escrito, assinado e com registro profissional, entregue a você, com as conclusões e as recomendações que se aplicam ao seu caso.</li>
+  </ol>
+
+  <p class="fina">Os prazos informados durante o processo são estimativas, e dependem do número de sessões necessárias e da agenda combinada entre nós.</p>
+
+  <h2>O que a avaliação entrega, e o que ela não entrega</h2>
+
+  <p>Ela entrega um mapa do seu funcionamento cognitivo, com identificação de áreas de potencial elevado e de áreas de dificuldade, uma conclusão fundamentada sobre a hipótese que motivou a busca, o reconhecimento de eventual dupla excepcionalidade, e recomendações práticas, que podem envolver encaminhamentos, ajustes de estudo ou trabalho, ou acompanhamento psicoterapêutico.</p>
+
+  <p>Ela não entrega mudança automática de vida, nem garantia de desempenho, nem uma explicação única para tudo o que já aconteceu com você. Entender o próprio funcionamento é uma ferramenta, e ferramenta serve na medida em que é usada depois.</p>
+
+  <h2>Quando faz sentido procurar</h2>
+
+  <ul>
+    <li>Você suspeita de altas habilidades em você e quer uma resposta com método, e não com palpite.</li>
+    <li>Um filho seu recebeu identificação e você se reconheceu na descrição.</li>
+    <li>Você convive com uma discrepância persistente entre o que consegue e o que entrega, e ninguém nunca explicou isso satisfatoriamente.</li>
+    <li>Você precisa de laudo para uma finalidade específica, acadêmica ou profissional.</li>
+    <li>Você quer investigar dupla excepcionalidade, especialmente TDAH ou autismo junto com potencial elevado.</li>
+  </ul>
+
+  <p>Se a sua questão é outra, como dificuldade de memória, suspeita de quadro neurológico ou avaliação para fins diversos, também trabalho com avaliação neuropsicológica nessas indicações, e a conversa inicial serve para definir o recorte correto.</p>
+
+  <h2>Quem avalia</h2>
+
+  <p>Priscila de Freitas Richter Rodrigues, psicóloga, neurodivergente (TEA + AH/SD), inscrita no CRP 06/74.219, especialista em dependência química e mestre em oncologia, professora universitária, supervisora clínica e responsável técnica pela Chokmah Saúde Mental.</p>
+
+  <div class="cta">
+    <h2>Agendar</h2>
+    <p>O primeiro passo é uma conversa por WhatsApp para entender a sua pergunta e explicar o processo, sem compromisso de seguir adiante.</p>
+    <p><a class="bt" href="https://wa.me/5511982655548">Agendar sessão</a></p>
+    <p class="fina" style="margin-top:1rem">Priscila de Freitas Richter Rodrigues, psicóloga, neurodivergente (TEA + AH/SD), CRP 06/74.219. Consultório na Vila Mariana, São Paulo.</p>
+  </div>
+
+  <div class="refs">
+    <h2>Referências</h2>
+    <ol>
+      <li>BRASIL. Ministério da Educação. Secretaria de Educação Especial. <em>Política Nacional de Educação Especial na Perspectiva da Educação Inclusiva</em>. Brasília: MEC/SEESP, 2008.</li>
+      <li>INCAU, Camila. <em>Trajetórias de uma identificação tardia: as Altas Habilidades/Superdotação em adultos do sul do Brasil</em>. Tese de Doutorado, Programa de Pós-Graduação em Psicologia do Desenvolvimento e Aprendizagem, Universidade Estadual Paulista (UNESP), Bauru, 2025. Orientadora: Carina Alexandra Rondini.</li>
+      <li>SILVA, Mariana Rodrigo do Vale Costa e; ROAMA-ALVES, Rauni Jandé; NAKANO, Tatiana de Cássia; RECH, Bárbara David. Identificação da dupla excepcionalidade em adulto: um caso de altas habilidades/superdotação e TDAH. <em>APRENDER: Cadernos de Filosofia e Psicologia da Educação</em>, v. 15, n. 26, p. 26-42, 2021.</li>
+    </ol>
+  </div>
+</main>
+
+<footer>
+  <div class="rodape">
+    <strong>Chokmah Saúde Mental</strong><br>
+    Psicologia, neuropsicologia, cuidados paliativos e luto<br>
+    Priscila de Freitas Richter Rodrigues, CRP 06/74.219<br>
+    WhatsApp (11) 98265-5548<br>
+    Vila Mariana, São Paulo, SP<br><br>
+    <a href="/privacidade.html">Política de privacidade</a>
+  </div>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MedicalWebPage",
+  "name": "Altas habilidades/superdotação em adultos",
+  "url": "https://www.chokmahsaudemental.com.br/altas-habilidades-adultos.html",
+  "inLanguage": "pt-BR",
+  "about": {
+    "@type": "MedicalTest",
+    "name": "Avaliação neuropsicológica de altas habilidades e superdotação em adultos"
+  },
+  "provider": {
+    "@type": "Psychologist",
+    "name": "Priscila de Freitas Richter Rodrigues",
+    "identifier": "CRP 06/74.219",
+    "worksFor": {
+      "@type": "MedicalBusiness",
+      "name": "Chokmah Saúde Mental",
+      "url": "https://www.chokmahsaudemental.com.br/",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Vila Mariana",
+        "addressRegion": "SP",
+        "addressCountry": "BR"
+      }
+    }
+  }
+}
+</script>
+
+</body>
+</html>
