@@ -27,18 +27,24 @@
     var salvo = null;
     try { salvo = localStorage.getItem(CHAVE); } catch (e) {}
 
+    var estadoInicial = (salvo === 'aceito') ? 'granted' : 'denied';
+
     gtag('consent', 'default', {
-      ad_storage: 'denied',
-      ad_user_data: 'denied',
-      ad_personalization: 'denied',
-      analytics_storage: (salvo === 'aceito') ? 'granted' : 'denied',
+      ad_storage: estadoInicial,
+      ad_user_data: estadoInicial,
+      ad_personalization: estadoInicial,
+      analytics_storage: estadoInicial,
       wait_for_update: 500
     });
 
     function guardar(valor) {
       try { localStorage.setItem(CHAVE, valor); } catch (e) {}
+      var estado = (valor === 'aceito') ? 'granted' : 'denied';
       gtag('consent', 'update', {
-        analytics_storage: (valor === 'aceito') ? 'granted' : 'denied'
+        ad_storage: estado,
+        ad_user_data: estado,
+        ad_personalization: estado,
+        analytics_storage: estado
       });
     }
 
@@ -72,7 +78,7 @@
       cx.id = 'chokmah-cookies';
       cx.setAttribute('role', 'dialog');
       cx.setAttribute('aria-label', 'Aviso sobre cookies');
-      cx.innerHTML = '<div class="cc-in"><p>Este site usa cookies do Google Analytics apenas para entender como as pessoas chegam até aqui e quais conteúdos são lidos. Enquanto você não decidir, nada é gravado no seu navegador. Detalhes na <a href="/privacidade.html">política de privacidade</a>.</p><div class="cc-bt"><button type="button" data-cc="aceito">Aceitar</button><button type="button" data-cc="recusado">Recusar</button></div></div>';
+      cx.innerHTML = '<div class="cc-in"><p>Este site usa cookies do Google Analytics e do Google Ads para entender como as pessoas chegam até aqui, quais conteúdos são lidos e quais anúncios trouxeram visitas. Enquanto você não decidir, nada é gravado no seu navegador. Detalhes na <a href="/privacidade.html">política de privacidade</a>.</p><div class="cc-bt"><button type="button" data-cc="aceito">Aceitar</button><button type="button" data-cc="recusado">Recusar</button></div></div>';
       document.body.appendChild(cx);
 
       var botoes = cx.querySelectorAll('button');
@@ -119,6 +125,7 @@
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-BR6BK8BY6Y');
+  gtag('config', 'AW-1059830195');
 </script>
 
 <script>
@@ -140,6 +147,9 @@
         link_url: a.href,
         link_texto: (a.innerText || '').trim().slice(0, 100)
       });
+      if (evento === 'contato_whatsapp' || evento === 'contato_telefone' || evento === 'contato_email') {
+        gtag('event', 'conversion', { send_to: 'AW-1059830195/fOWUCLKvuIUdELPzrvkD' });
+      }
     }
   }, true);
 

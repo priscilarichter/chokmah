@@ -20,18 +20,24 @@
     var salvo = null;
     try { salvo = localStorage.getItem(CHAVE); } catch (e) {}
 
+    var estadoInicial = (salvo === 'aceito') ? 'granted' : 'denied';
+
     gtag('consent', 'default', {
-      ad_storage: 'denied',
-      ad_user_data: 'denied',
-      ad_personalization: 'denied',
-      analytics_storage: (salvo === 'aceito') ? 'granted' : 'denied',
+      ad_storage: estadoInicial,
+      ad_user_data: estadoInicial,
+      ad_personalization: estadoInicial,
+      analytics_storage: estadoInicial,
       wait_for_update: 500
     });
 
     function guardar(valor) {
       try { localStorage.setItem(CHAVE, valor); } catch (e) {}
+      var estado = (valor === 'aceito') ? 'granted' : 'denied';
       gtag('consent', 'update', {
-        analytics_storage: (valor === 'aceito') ? 'granted' : 'denied'
+        ad_storage: estado,
+        ad_user_data: estado,
+        ad_personalization: estado,
+        analytics_storage: estado
       });
     }
 
@@ -65,7 +71,7 @@
       cx.id = 'chokmah-cookies';
       cx.setAttribute('role', 'dialog');
       cx.setAttribute('aria-label', 'Aviso sobre cookies');
-      cx.innerHTML = '<div class="cc-in"><p>Este site usa cookies do Google Analytics apenas para entender como as pessoas chegam até aqui e quais conteúdos são lidos. Enquanto você não decidir, nada é gravado no seu navegador. Detalhes na <a href="/privacidade.html">política de privacidade</a>.</p><div class="cc-bt"><button type="button" data-cc="aceito">Aceitar</button><button type="button" data-cc="recusado">Recusar</button></div></div>';
+      cx.innerHTML = '<div class="cc-in"><p>Este site usa cookies do Google Analytics e do Google Ads para entender como as pessoas chegam até aqui, quais conteúdos são lidos e quais anúncios trouxeram visitas. Enquanto você não decidir, nada é gravado no seu navegador. Detalhes na <a href="/privacidade.html">política de privacidade</a>.</p><div class="cc-bt"><button type="button" data-cc="aceito">Aceitar</button><button type="button" data-cc="recusado">Recusar</button></div></div>';
       document.body.appendChild(cx);
 
       var botoes = cx.querySelectorAll('button');
@@ -112,6 +118,7 @@
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-BR6BK8BY6Y');
+  gtag('config', 'AW-1059830195');
 </script>
 
 <style>
@@ -244,7 +251,7 @@
 
 <main>
   <h1>Política de Privacidade</h1>
-  <p class="atualizacao">Última atualização: 22 de setembro de 2026</p>
+  <p class="atualizacao">Última atualização: 30 de setembro de 2026</p>
 
   <p>Esta política explica quais dados são coletados quando você visita o site da Chokmah Saúde Mental, para que eles servem e quais são os seus direitos. Ela segue a Lei Geral de Proteção de Dados Pessoais (Lei nº 13.709/2018).</p>
 
@@ -257,6 +264,7 @@
   <ul>
     <li><strong>Dados de navegação</strong>, coletados pelo Google Analytics: páginas que você visitou, tempo de permanência, cliques em links, tipo de dispositivo e navegador, origem do acesso (por exemplo, se você chegou por uma busca no Google ou por um link no Instagram) e localização aproximada estimada a partir do endereço de IP, no nível de cidade.</li>
     <li><strong>Um identificador anônimo</strong> armazenado em cookie, que permite distinguir uma visita nova de um retorno, sem identificar quem você é.</li>
+    <li><strong>Dados de medição de anúncios</strong>, coletados pelo Google Ads, e somente se você aceitar os cookies no aviso que aparece na primeira visita: o registro de que a visita veio de um anúncio e o registro de que, depois de chegar por ele, houve um clique em um botão de contato. Isso existe para que seja possível saber se o dinheiro investido em divulgação está trazendo pessoas realmente interessadas, e não para montar um perfil seu.</li>
   </ul>
   <p>Não são coletados aqui nome, CPF, telefone, e-mail, endereço, nem qualquer informação de saúde.</p>
 
@@ -278,12 +286,13 @@
 
   <h2>Base legal</h2>
   <p>O tratamento de dados de navegação se apoia no legítimo interesse da controladora em manter e aprimorar o site, conforme o artigo 7º, inciso IX, da LGPD. Esse interesse foi ponderado contra os seus direitos, e por isso a coleta se limita a dados agregados de navegação, sem identificação pessoal.</p>
+  <p>Os cookies de publicidade, ligados ao Google Ads, dependem do seu consentimento, conforme o artigo 7º, inciso I, da LGPD. Enquanto você não clicar em aceitar, eles ficam desativados, e se você clicar em recusar eles continuam desativados. A escolha pode ser mudada a qualquer momento pelo link de preferências de cookies no rodapé.</p>
 
   <h2>Cookies e como desativar</h2>
-  <p>Cookies são pequenos arquivos que o site guarda no seu navegador. Aqui eles servem apenas para a medição de audiência descrita acima. Você pode bloqueá-los ou apagá-los a qualquer momento nas configurações do seu navegador, e o site continuará funcionando normalmente. Também é possível instalar o complemento oficial do Google que desativa o Analytics em todos os sites que você visitar, disponível em <a href="https://tools.google.com/dlpage/gaoptout" rel="noopener noreferrer" target="_blank">tools.google.com/dlpage/gaoptout</a>.</p>
+  <p>Cookies são pequenos arquivos que o site guarda no seu navegador. Aqui eles servem apenas para a medição de audiência e a medição de anúncios descritas acima. Você pode bloqueá-los ou apagá-los a qualquer momento nas configurações do seu navegador, e o site continuará funcionando normalmente. Também é possível instalar o complemento oficial do Google que desativa o Analytics em todos os sites que você visitar, disponível em <a href="https://tools.google.com/dlpage/gaoptout" rel="noopener noreferrer" target="_blank">tools.google.com/dlpage/gaoptout</a>, e desativar a personalização de anúncios do Google na página <a href="https://myadcenter.google.com/" rel="noopener noreferrer" target="_blank">myadcenter.google.com</a>.</p>
 
   <h2>Com quem os dados são compartilhados</h2>
-  <p>Os dados de navegação são processados pelo Google, na condição de operador, por meio do Google Analytics. Isso envolve transferência internacional de dados, já que os servidores do Google ficam fora do Brasil, situação prevista no artigo 33 da LGPD. Nenhum outro terceiro recebe dados deste site.</p>
+  <p>Os dados de navegação são processados pelo Google, na condição de operador, por meio do Google Analytics, e, quando há consentimento, também por meio do Google Ads. Isso envolve transferência internacional de dados, já que os servidores do Google ficam fora do Brasil, situação prevista no artigo 33 da LGPD. Nenhum outro terceiro recebe dados deste site.</p>
 
   <h2>Por quanto tempo os dados ficam guardados</h2>
   <p>Os registros de navegação são mantidos no Google Analytics pelo período configurado na ferramenta, de no máximo quatorze meses, e depois são excluídos automaticamente. Relatórios agregados, que não permitem identificar ninguém, podem ser mantidos por mais tempo.</p>
